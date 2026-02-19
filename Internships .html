@@ -1,204 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Internships | OpportunitiesHub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Internships | OpportunitiesHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
-    }
+<!-- Faster image loading -->
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
 
-    body{
-      background:#f4f6f8;
-      color:#333;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
-    header{
-      background:#ffffff;
-      padding:15px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-    }
+body{
+  background:#f4f6f8;
+  color:#333;
+}
 
-    .logo{
-      font-size:22px;
-      font-weight:bold;
-      color:#1e88e5;
-    }
+header{
+  background:#ffffff;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
 
-    nav a{
-      margin-left:20px;
-      text-decoration:none;
-      color:#333;
-      font-weight:500;
-    }
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#1e88e5;
+}
 
-    nav a.active{
-      color:#e53935;
-    }
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
 
-    /* HERO */
-    .hero{
-      background:linear-gradient(to right,#1e88e5,#42a5f5);
-      color:white;
-      text-align:center;
-      padding:70px 20px;
-    }
+nav a.active{
+  color:#e53935;
+}
 
-    .hero h1{
-      font-size:40px;
-      margin-bottom:10px;
-    }
+/* HERO */
+.hero{
+  background:linear-gradient(to right,#1e88e5,#42a5f5);
+  color:white;
+  text-align:center;
+  padding:70px 20px;
+}
 
-    .hero p{
-      font-size:18px;
-    }
+.hero h1{
+  font-size:40px;
+  margin-bottom:10px;
+}
 
-    /* CARDS */
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-      padding:50px;
-    }
+.hero p{
+  font-size:18px;
+}
 
-    .card{
-      background:white;
-      border-radius:16px;
-      padding:20px;
-      box-shadow:0 8px 18px rgba(0,0,0,0.07);
-    }
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  padding:50px;
+}
 
-    .card img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      border-radius:12px;
-      margin-bottom:15px;
-    }
+.card{
+  background:white;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.07);
+  transition:transform 0.3s ease;
+}
 
-    .card h3{
-      color:#1e88e5;
-      margin-bottom:10px;
-    }
+.card:hover{
+  transform:translateY(-6px);
+}
 
-    .card p{
-      font-size:15px;
-      margin-bottom:12px;
-      color:#555;
-    }
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:15px;
+}
 
-    .card a{
-      text-decoration:none;
-      color:#e53935;
-      font-weight:bold;
-    }
+.card h3{
+  color:#1e88e5;
+  margin-bottom:10px;
+}
 
-    footer{
-      background:#1e88e5;
-      color:white;
-      text-align:center;
-      padding:25px;
-      margin-top:50px;
-    }
+.card p{
+  font-size:15px;
+  margin-bottom:12px;
+  color:#555;
+}
 
-    @media(max-width:600px){
-      header{
-        flex-direction:column;
-        gap:10px;
-      }
-      .hero h1{
-        font-size:30px;
-      }
-    }
-  </style>
+.card a{
+  text-decoration:none;
+  color:#e53935;
+  font-weight:bold;
+}
+
+footer{
+  background:#1e88e5;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:50px;
+}
+
+@media(max-width:600px){
+  header{
+    flex-direction:column;
+    gap:10px;
+  }
+  .hero h1{
+    font-size:30px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">🌍 OpportunitiesHub</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="internships.html" class="active">Internships</a>
-    <a href="scholarships.html">Scholarships</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="logo">🌍 OpportunitiesHub</div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="jobs.html">Jobs</a>
+  <a href="internships.html" class="active">Internships</a>
+  <a href="scholarships.html">Scholarships</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>Internship Opportunities</h1>
-  <p>Explore global and Rwanda-based internships</p>
+<h1>Internship Opportunities</h1>
+<p>Explore global and Rwanda-based internships</p>
 </section>
 
 <section class="cards">
 
-  <!-- INTERNATIONAL -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>Google Internship Program</h3>
+  <p>Hands-on experience in engineering, product design, and data science.</p>
+  <a href="https://careers.google.com/students/" target="_blank">Apply at Google →</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-    <h3>Google Internship Program</h3>
-    <p>Hands-on experience in engineering, product design, and data science.</p>
-    <a href="https://careers.google.com/students/" target="_blank">Apply at Google →</a>
-  </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>United Nations Internship</h3>
+  <p>Work with global teams on development, policy, and humanitarian projects.</p>
+  <a href="https://careers.un.org/lbw/home.aspx?viewtype=IP" target="_blank">Apply at UN →</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
-    <h3>United Nations Internship</h3>
-    <p>Work with global teams on development, policy, and humanitarian projects.</p>
-    <a href="https://careers.un.org/lbw/home.aspx?viewtype=IP" target="_blank">Apply at UN →</a>
-  </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>Microsoft Internship Program</h3>
+  <p>Build technology and business skills in a global innovation environment.</p>
+  <a href="https://careers.microsoft.com/students" target="_blank">Apply at Microsoft →</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-    <h3>Microsoft Internship Program</h3>
-    <p>Build technology and business skills in a global innovation environment.</p>
-    <a href="https://careers.microsoft.com/students" target="_blank">Apply at Microsoft →</a>
-  </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>IT Internship</h3>
+  <p>Rwanda Revenue Authority (RRA)</p>
+  <a href="https://www.rra.gov.rw/en/careers" target="_blank">Apply at RRA →</a>
+</div>
 
-  <!-- RWANDA -->
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>Software Development Intern</h3>
+  <p>Irembo Ltd – Rwanda</p>
+  <a href="https://irembo.com/careers/" target="_blank">Apply at Irembo →</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe">
-    <h3>IT Internship</h3>
-    <p>Rwanda Revenue Authority (RRA)</p>
-    <a href="https://www.rra.gov.rw/en/careers" target="_blank">Apply at RRA →</a>
-  </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>Telecommunications Intern</h3>
+  <p>MTN Rwanda</p>
+  <a href="https://www.mtn.co.rw/about/careers/" target="_blank">Apply at MTN Rwanda →</a>
+</div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-    <h3>Software Development Intern</h3>
-    <p>Irembo Ltd – Rwanda</p>
-    <a href="https://irembo.com/careers/" target="_blank">Apply at Irembo →</a>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
-    <h3>Telecommunications Intern</h3>
-    <p>MTN Rwanda</p>
-    <a href="https://www.mtn.co.rw/about/careers/" target="_blank">Apply at MTN Rwanda →</a>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
-    <h3>Public Sector Internship</h3>
-    <p>Rwanda Development Board (RDB)</p>
-    <a href="https://rdb.rw/careers/" target="_blank">Apply at RDB →</a>
-  </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=70"
+       loading="lazy" decoding="async" width="800" height="500">
+  <h3>Public Sector Internship</h3>
+  <p>Rwanda Development Board (RDB)</p>
+  <a href="https://rdb.rw/careers/" target="_blank">Apply at RDB →</a>
+</div>
 
 </section>
 
 <footer>
-  © 2026 OpportunitiesHub — Empowering Global Talent
+© 2026 OpportunitiesHub — Empowering Global Talent
 </footer>
 
 </body>

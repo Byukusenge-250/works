@@ -5,6 +5,10 @@
 <title>Global Opportunities</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Faster image connection -->
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
 <style>
 body{
   margin:0;
@@ -64,10 +68,10 @@ nav a:hover{ text-decoration:underline; }
   border-radius:10px;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
   text-align:center;
-  
+  transition: transform 0.3s ease;
 }
 .card:hover{
-transform: translateY(-6px);
+  transform: translateY(-6px);
 }
 .card img{
   width:100%;
@@ -91,15 +95,16 @@ footer{
   padding:15px;
 }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KXXQ8XHJW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-4KXXQ8XHJW');
+<!-- Google tag optimized -->
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-4KXXQ8XHJW"></script>
+<script defer>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4KXXQ8XHJW');
 </script>
+
 </head>
 
 <body>
@@ -115,13 +120,19 @@ footer{
   <a href="About.html">About</a>
 </nav>
 </header>
+
 <section class="hero">
 <h1>Explore Opportunities Worldwide</h1>
 <p>Find jobs, scholarships & internships globally</p>
 
 <div class="hero-image">
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-       alt="Global professionals working together">
+  <img 
+    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=70"
+    alt="Global professionals working together"
+    loading="eager"
+    decoding="async"
+    width="1000"
+    height="600">
 </div>
 </section>
 
@@ -129,21 +140,24 @@ footer{
 <section class="cards">
 
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=70"
+       loading="lazy" decoding="async" width="600" height="400">
   <h3>Software Engineering Jobs</h3>
   <p>Remote & onsite tech jobs worldwide</p>
   <a href="Jobs.html">View Jobs</a>
 </div>
 
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b">
+  <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=600&q=70"
+       loading="lazy" decoding="async" width="600" height="400">
   <h3>International Scholarships</h3>
   <p>Fully funded study opportunities</p>
   <a href="Scholarships .html">View Scholarships</a>
 </div>
 
 <div class="card">
-  <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad">
+  <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=70"
+       loading="lazy" decoding="async" width="600" height="400">
   <h3>Internships & Training</h3>
   <p>Gain experience from global companies</p>
   <a href="Internships .html">View Internships</a>
@@ -151,7 +165,8 @@ footer{
 
 </section>
 
-<!-- ABOUT WEBSITE & JOB BENEFITS -->
+<!-- ABOUT WEBSITE & BENEFITS -->
+ <u><h3 style="text-align: center;">BENEFITS</h3></u>
 <section class="cards">
 
 <div class="card">
