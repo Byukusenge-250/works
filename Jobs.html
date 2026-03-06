@@ -4,106 +4,275 @@
 <meta charset="UTF-8">
 <title>Jobs | OpportunitiesHub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Browse 180+ verified job opportunities from Rwanda and around the world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f4f6f8;
+:root{--navy:#050b1a;--navy2:#080f22;--card:#0c1428;--card2:#101830;--blue:#2563eb;--blue-b:#1d4ed8;--cyan:#06b6d4;--gold:#f59e0b;--emerald:#10b981;--violet:#8b5cf6;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;--border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.10);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;}
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.ab{position:absolute;border-radius:50%;filter:blur(140px);}
+.ab1{width:700px;height:700px;background:rgba(37,99,235,.16);top:-200px;right:-150px;}
+.ab2{width:500px;height:500px;background:rgba(139,92,246,.12);bottom:-150px;left:-120px;}
+.ab3{width:320px;height:320px;background:rgba(6,182,212,.08);top:50%;right:8%;}
+.ambient::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.022) 1px,transparent 1px);background-size:34px 34px;}
+header{position:sticky;top:0;z-index:200;height:68px;padding:0 56px;display:flex;justify-content:space-between;align-items:center;background:rgba(5,11,26,.84);backdrop-filter:blur(28px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;}
+.logo-icon{width:34px;height:34px;border-radius:10px;font-size:17px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;animation:glow 3s ease-in-out infinite;}
+@keyframes glow{0%,100%{box-shadow:0 0 16px rgba(37,99,235,.5);}50%{box-shadow:0 0 36px rgba(37,99,235,.85);}}
+nav{display:flex;gap:3px;}
+nav a{text-decoration:none;color:var(--muted2);font-size:14px;font-weight:500;padding:8px 15px;border-radius:10px;transition:all .2s;}
+nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
+nav a.active{color:#93c5fd;background:rgba(37,99,235,.14);}
+.btn-c{text-decoration:none;color:#fff;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:9px 20px;border-radius:10px;background:var(--blue);box-shadow:0 4px 14px rgba(37,99,235,.38);transition:all .2s;}
+.btn-c:hover{background:var(--blue-b);transform:translateY(-1px);}
+.hero{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:92px 56px 68px;text-align:center;}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.26);color:#93c5fd;font-size:12.5px;font-weight:600;padding:6px 16px;border-radius:100px;margin-bottom:26px;animation:up .6s ease both;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blink 1.8s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(44px,5.5vw,70px);font-weight:800;line-height:1.06;letter-spacing:-2.5px;color:#fff;animation:up .6s .08s ease both;}
+.g{background:linear-gradient(135deg,#60a5fa,#818cf8 50%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sub{margin-top:20px;font-size:17px;color:var(--muted2);line-height:1.74;font-weight:300;max-width:500px;margin-left:auto;margin-right:auto;animation:up .6s .16s ease both;}
+.sbar{max-width:660px;margin:38px auto 0;display:flex;gap:10px;animation:up .6s .24s ease both;}
+.si{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--border2);border-radius:14px;padding:16px 22px;font-family:'DM Sans',sans-serif;font-size:15px;color:#fff;outline:none;transition:border-color .2s;}
+.si::placeholder{color:var(--muted);}
+.si:focus{border-color:rgba(37,99,235,.5);}
+.sb{background:linear-gradient(135deg,var(--blue),#4f46e5);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;padding:16px 28px;border-radius:14px;cursor:pointer;white-space:nowrap;transition:all .2s;box-shadow:0 6px 20px rgba(37,99,235,.38);}
+.sb:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(37,99,235,.5);}
+.hstats{display:flex;justify-content:center;gap:48px;margin-top:52px;padding-top:40px;border-top:1px solid var(--border);animation:up .6s .32s ease both;}
+.hs .n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#fff;letter-spacing:-1px;}
+.hs .n span{color:var(--blue);}
+.hs .l{font-size:13px;color:var(--muted2);margin-top:3px;}
+.section{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 56px 90px;}
+.stop{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px;flex-wrap:wrap;gap:16px;}
+.stitle{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:-.4px;}
+.div{display:flex;align-items:center;gap:14px;margin:44px 0 30px;}
+.div span{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted2);white-space:nowrap;}
+.div::before,.div::after{content:'';flex:1;height:1px;background:var(--border);}
+.filters{display:flex;gap:8px;flex-wrap:wrap;}
+.fb{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted2);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.fb:hover{color:#fff;border-color:rgba(255,255,255,.18);}
+.fb.on{background:rgba(37,99,235,.2);border-color:rgba(37,99,235,.4);color:#93c5fd;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:all .35s cubic-bezier(.34,1.56,.64,1);animation:up .5s ease both;}
+.card:hover{transform:translateY(-8px);border-color:rgba(37,99,235,.38);box-shadow:0 26px 64px rgba(0,0,0,.5),0 0 0 1px rgba(37,99,235,.12);}
+/* ── IMAGE OPTIMIZATION ── */
+.cimg{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--card2);}
+.cimg img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .55s ease;
+  /* performance hints */
+  will-change:transform;
+  image-rendering:-webkit-optimize-contrast;
 }
-header{
-  background:#fff;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.05);
-}
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-}
-nav a:hover{color:#1e88e5}
-.logo{
-  color:#1e88e5;
-  font-size:22px;
-  font-weight:bold;
-}
-.container{
-  max-width:1100px;
-  margin:40px auto;
-  padding:20px;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.card{
-  background:#fff;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-.card img{
-  width:100%;
-  height:170px;
-  object-fit:cover;
-}
-.card div{padding:15px}
-.card h3{
-  margin:0;
-  color:#1e88e5;
-}
-.card p{
-  margin:8px 0;
-  color:#555;
-}
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  color:#e53935;
-  font-weight:bold;
-  text-decoration:none;
-}
-footer{
-  text-align:center;
-  padding:25px;
-  background:#1e88e5;
-  color:#fff;
-  margin-top:60px;
-}
+.card:hover .cimg img{transform:scale(1.07);}
+.cimg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(12,20,40,.96) 100%);}
+/* ── END IMAGE OPT ── */
+.chip{position:absolute;bottom:14px;left:14px;z-index:2;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 13px;border-radius:100px;backdrop-filter:blur(12px);}
+.ci{background:rgba(37,99,235,.22);border:1px solid rgba(37,99,235,.42);color:#93c5fd;}
+.cr{background:rgba(245,158,11,.18);border:1px solid rgba(245,158,11,.4);color:#fcd34d;}
+.ce{background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#6ee7b7;}
+.sv{position:absolute;top:13px;right:13px;z-index:2;width:34px;height:34px;border-radius:50%;background:rgba(12,20,40,.78);backdrop-filter:blur(10px);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s;}
+.sv:hover{background:var(--blue);border-color:var(--blue);transform:scale(1.1);}
+.hot{position:absolute;top:13px;left:13px;z-index:2;background:rgba(245,158,11,.9);color:#000;font-size:10px;font-weight:800;padding:4px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px;}
+.cbody{padding:20px 22px 22px;}
+.cco{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.clogo{width:38px;height:38px;border-radius:10px;background:var(--card2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.cnm{font-size:13px;color:var(--muted2);font-weight:500;}
+.cloc{font-size:12px;color:rgba(100,116,139,.55);margin-top:1px;}
+.ctitle{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-bottom:11px;line-height:1.22;}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.tag{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted2);font-size:11px;font-weight:500;padding:4px 10px;border-radius:6px;}
+.cfoot{display:flex;align-items:center;justify-content:space-between;padding-top:15px;border-top:1px solid var(--border);}
+.cdead{font-size:12px;color:rgba(100,116,139,.55);}
+.cdead strong{color:var(--muted2);}
+.apply{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--blue),#4f46e5);color:#fff;text-decoration:none;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:9px 18px;border-radius:10px;transition:all .2s;}
+.apply:hover{transform:translateX(3px);box-shadow:0 4px 16px rgba(37,99,235,.42);}
+footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid var(--border);}
+.ft{max-width:1240px;margin:0 auto;padding:52px 56px 38px;display:grid;grid-template-columns:280px 1fr 1fr 1fr;gap:50px;}
+.fbl{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#fff;display:flex;align-items:center;gap:9px;text-decoration:none;margin-bottom:13px;}
+.fbi{width:30px;height:30px;border-radius:8px;font-size:15px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;}
+.fb2 p{font-size:13px;color:var(--muted2);line-height:1.72;margin-bottom:20px;}
+.fsoc{display:flex;gap:8px;}
+.fsoc a{width:34px;height:34px;border-radius:9px;background:var(--card);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;transition:all .2s;}
+.fsoc a:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-2px);}
+.fc h5{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#fff;letter-spacing:.8px;text-transform:uppercase;margin-bottom:15px;}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.fc ul a{text-decoration:none;font-size:13px;color:var(--muted2);transition:color .2s;display:flex;align-items:center;gap:6px;}
+.fc ul a:hover{color:#fff;}
+.fc ul a::before{content:'';width:3px;height:3px;background:var(--muted);border-radius:50%;flex-shrink:0;transition:background .2s;}
+.fc ul a:hover::before{background:var(--blue);}
+.fbot{max-width:1240px;margin:0 auto;padding:20px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid var(--border);}
+.copy{font-size:13px;color:var(--muted);}
+.bdgs{display:flex;gap:8px;}
+.bdg{background:var(--card);border:1px solid var(--border2);border-radius:7px;padding:4px 11px;font-size:11px;color:var(--muted2);}
+.leg{display:flex;gap:18px;}
+.leg a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.leg a:hover{color:var(--text);}
+@keyframes up{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+.card:nth-child(1){animation-delay:.04s}.card:nth-child(2){animation-delay:.09s}.card:nth-child(3){animation-delay:.14s}
+.card:nth-child(4){animation-delay:.19s}.card:nth-child(5){animation-delay:.24s}.card:nth-child(6){animation-delay:.29s}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){header{padding:0 18px;}nav a:not(.active){display:none;}.hero{padding:62px 18px 50px;}.sbar{flex-direction:column;}.hstats{gap:22px;flex-wrap:wrap;}.section{padding:0 18px 60px;}.grid{grid-template-columns:1fr;}.ft{grid-template-columns:1fr;padding:36px 18px 24px;gap:26px;}.fbot{flex-direction:column;text-align:center;padding:18px;}}
 </style>
 </head>
-
 <body>
-
+<div class="ambient"><div class="ab ab1"></div><div class="ab ab2"></div><div class="ab ab3"></div></div>
 <header>
-  <div class="logo">🌍 OpportunitiesHub</div>
-  <nav>
+  <a href="home.html" class="logo"><span class="logo-icon">🌍</span>OpportunitiesHub</a>
+  <nav></nav>
     <a href="index.html">Home</a>
-   
+    <a href="home.html">Home</a><a href="jobs.html" class="active">Jobs</a>
+    <a href="Scholarships.html">Scholarships</a><a href="Internships.html">Internships</a><a href="About.html">About</a>
   </nav>
+  <a href="Contact.html" class="btn-c">Contact →</a>
 </header>
 
-<div class="container">
-<h1>Available Job Opportunities</h1>
+<section class="hero">
+  <div class="pill"><span class="dot"></span>180+ Jobs · Updated Daily</div>
+  <h1>Find Your <span class="g">Dream Job</span><br>Anywhere</h1>
+  <p class="sub">Curated job listings from top companies in Rwanda and around the world — verified, free, and updated daily.</p>
+  <div class="sbar">
+    <input type="text" class="si" placeholder="Search job title, company, skill…">
+    <button class="sb">Search →</button>
+  </div>
+  <div class="hstats">
+    <div class="hs"><div class="n">180<span>+</span></div><div class="l">Jobs Listed</div></div>
+    <div class="hs"><div class="n">50<span>+</span></div><div class="l">Rwanda-Based</div></div>
+    <div class="hs"><div class="n">40<span>+</span></div><div class="l">International</div></div>
+    <div class="hs"><div class="n">100<span>%</span></div><div class="l">Free to Apply</div></div>
+  </div>
+</section>
 
-<div class="cards">
+<section class="section">
+  <div class="stop">
+    <div class="stitle">All Job Opportunities</div>
+    <div class="filters">
+      <button class="fb on">All</button><button class="fb">Rwanda</button>
+      <button class="fb">International</button><button class="fb">Remote</button>
+      <button class="fb">Tech</button><button class="fb">Finance</button>
+    </div>
+  </div>
 
-<!-- INTERNATIONAL JOBS -->
+  <div class="div"><span>🌍 International</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Software Engineer Google" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip ce">Remote</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">🟦</div><div><div class="cnm">Google</div><div class="cloc">Mountain View · Remote</div></div></div>
+        <div class="ctitle">Software Engineer (L4)</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Engineering</span><span class="tag">Senior</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Ongoing</div><a href="https://careers.google.com/jobs" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Marketing Amazon" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip ci">On-site</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">🟠</div><div><div class="cnm">Amazon</div><div class="cloc">Seattle, USA</div></div></div>
+        <div class="ctitle">Marketing Specialist</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Marketing</span><span class="tag">Mid-level</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Ongoing</div><a href="https://www.amazon.jobs" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="UX Designer Microsoft" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip ce">Hybrid</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">🪟</div><div><div class="cnm">Microsoft</div><div class="cloc">Global · Hybrid</div></div></div>
+        <div class="ctitle">UI / UX Designer</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Design</span><span class="tag">Remote OK</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Ongoing</div><a href="https://careers.microsoft.com" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+  </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-<div>
-<h3>Software Engineer</h3>
-<p>Google – Remote</p>
-<a href="https://careers.google.com/jobs" target="_blank">Apply at Google →</a>
-</div>
-</div>
-
+  <div class="div"><span>🇷🇼 Rwanda</span></div>
+  <div class="grid">
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="IT Officer Bank of Kigali" loading="lazy" decoding="async" width="640" height="360">
+        <div class="hot">🔥 Hot</div><span class="chip cr">Kigali</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">🏦</div><div><div class="cnm">Bank of Kigali</div><div class="cloc">Kigali, Rwanda</div></div></div>
+        <div class="ctitle">IT Officer</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">FinTech</span><span class="tag">On-site</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Rolling</div><a href="https://www.bk.rw/careers/" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Software Developer Andela" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip ce">Remote OK</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">⚡</div><div><div class="cnm">Andela</div><div class="cloc">Kigali · Remote</div></div></div>
+        <div class="ctitle">Software Developer</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Engineering</span><span class="tag">Remote OK</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Ongoing</div><a href="https://andela.com/careers/" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Customer Support MTN Rwanda" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip cr">Kigali</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">📡</div><div><div class="cnm">MTN Rwanda</div><div class="cloc">Kigali, Rwanda</div></div></div>
+        <div class="ctitle">Customer Support Agent</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Support</span><span class="tag">On-site</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Rolling</div><a href="https://www.mtn.co.rw/about/careers/" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Digital Services Irembo" loading="lazy" decoding="async" width="640" height="360">
+        <div class="hot">🔥 Hot</div><span class="chip cr">Kigali</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">🌐</div><div><div class="cnm">Irembo</div><div class="cloc">Kigali, Rwanda</div></div></div>
+        <div class="ctitle">Digital Services Officer</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">GovTech</span><span class="tag">On-site</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Rolling</div><a href="https://irembo.com/careers/" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Project Officer RDB" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip cr">Kigali</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">🏛️</div><div><div class="cnm">Rwanda Development Board</div><div class="cloc">Kigali, Rwanda</div></div></div>
+        <div class="ctitle">Project Officer</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Government</span><span class="tag">On-site</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Rolling</div><a href="https://rdb.rw/careers/" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cimg">
+        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=640&h=360&fit=crop&crop=center&auto=format&q=72" alt="Data Analyst BPR" loading="lazy" decoding="async" width="640" height="360">
+        <span class="chip cr">Kigali</span><div class="sv">🔖</div>
+      </div>
+      <div class="cbody">
+        <div class="cco"><div class="clogo">📊</div><div><div class="cnm">BPR Bank Rwanda</div><div class="cloc">Kigali, Rwanda</div></div></div>
+        <div class="ctitle">Data Analyst</div>
+        <div class="tags"><span class="tag">Full-time</span><span class="tag">Analytics</span><span class="tag">Finance</span></div>
+        <div class="cfoot"><div class="cdead"><strong>Open</strong> · Rolling</div><a href="https://bpr.rw/careers" target="_blank" class="apply">Apply →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="card">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 <div>
@@ -176,3 +345,27 @@ footer{
 
 </body>
 </html>
+=======
+<footer>
+  <div class="ft">
+    <div class="fb2">
+      <a href="home.html" class="fbl"><span class="fbi">🌍</span>OpportunitiesHub</a>
+      <p>Your trusted platform for jobs, scholarships, and internships from Rwanda and across the globe.</p>
+      <div class="fsoc"><a href="#">𝕏</a><a href="#">in</a><a href="#">f</a><a href="#">📧</a></div>
+    </div>
+    <div class="fc"><h5>Opportunities</h5><ul><li><a href="jobs.html">Browse Jobs</a></li><li><a href="Scholarships.html">Scholarships</a></li><li><a href="Internships.html">Internships</a></li><li><a href="jobs.html">Rwanda Jobs</a></li><li><a href="jobs.html">Remote Jobs</a></li></ul></div>
+    <div class="fc"><h5>Company</h5><ul><li><a href="About.html">About Us</a></li><li><a href="Contact.html">Contact</a></li><li><a href="#">Our Mission</a></li><li><a href="#">Blog</a></li></ul></div>
+    <div class="fc"><h5>Resources</h5><ul><li><a href="#">How to Apply</a></li><li><a href="#">CV Writing Tips</a></li><li><a href="#">Interview Guide</a></li><li><a href="#">Career Advice</a></li><li><a href="#">FAQ</a></li></ul></div>
+  </div>
+  <div class="fbot">
+    <div class="copy">© 2026 OpportunitiesHub. All rights reserved.</div>
+    <div class="bdgs"><span class="bdg">🔒 SSL Secured</span><span class="bdg">✅ Verified</span><span class="bdg">🆓 Free</span></div>
+    <div class="leg"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.fb').forEach(b=>{b.addEventListener('click',function(){document.querySelectorAll('.fb').forEach(x=>x.classList.remove('on'));this.classList.add('on');});});
+document.querySelectorAll('.sv').forEach(b=>{b.addEventListener('click',function(e){e.preventDefault();const s=this.textContent==='🔖';this.textContent=s?'💙':'🔖';this.style.background=s?'var(--blue)':'';});});
+</script>
+</body></html>
+>>>>>>> 6beed5f (Description of your changes)

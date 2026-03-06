@@ -2,227 +2,542 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Global Opportunities</title>
+<title>OpportunitiesHub | Find Jobs, Scholarships & Internships</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Faster image connection -->
+<meta name="description" content="Discover top jobs, scholarships and internships from Rwanda and around the world. Free, trusted, updated daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link rel="dns-prefetch" href="https://images.unsplash.com">
-
+<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-4KXXQ8XHJW"></script>
+<script defer>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KXXQ8XHJW');</script>
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f2f4f7;
+:root{
+  --navy:#050b1a;--navy2:#080f22;--card:#0c1428;--card2:#101830;
+  --blue:#2563eb;--blue-b:#1d4ed8;--blue-glow:rgba(37,99,235,.35);
+  --cyan:#06b6d4;--gold:#f59e0b;--emerald:#10b981;--rose:#f43f5e;--violet:#8b5cf6;
+  --white:#fff;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;
+  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.10);
+  --r:18px;--rl:26px;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* AMBIENT */
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.ab{position:absolute;border-radius:50%;filter:blur(130px);}
+.ab1{width:700px;height:700px;background:rgba(37,99,235,.18);top:-200px;right:-200px;}
+.ab2{width:500px;height:500px;background:rgba(139,92,246,.14);bottom:-150px;left:-150px;}
+.ab3{width:350px;height:350px;background:rgba(6,182,212,.10);top:45%;right:5%;}
+.ab4{width:280px;height:280px;background:rgba(16,185,129,.08);top:25%;left:30%;}
+.ambient::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);background-size:36px 36px;}
 
 /* HEADER */
-header{
-  background:#0a2540;
-  color:white;
-  padding:20px;
-  text-align:center;
-}
-nav a{
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:bold;
-}
-nav a:hover{ text-decoration:underline; }
+header{position:sticky;top:0;z-index:200;padding:0 56px;height:68px;display:flex;justify-content:space-between;align-items:center;background:rgba(5,11,26,.82);backdrop-filter:blur(28px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;letter-spacing:-.4px;}
+.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 0 20px rgba(37,99,235,.5);animation:logoPulse 3s ease-in-out infinite;}
+@keyframes logoPulse{0%,100%{box-shadow:0 0 18px rgba(37,99,235,.5);}50%{box-shadow:0 0 38px rgba(37,99,235,.8),0 0 60px rgba(37,99,235,.3);}}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--muted2);font-size:14px;font-weight:500;padding:8px 15px;border-radius:10px;transition:all .2s;}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.nav-links a.active{color:#fff;}
+.nav-actions{display:flex;gap:10px;align-items:center;}
+.btn-outline-sm{text-decoration:none;color:var(--muted2);font-size:13px;font-weight:500;padding:8px 18px;border-radius:10px;border:1px solid var(--border2);transition:all .2s;}
+.btn-outline-sm:hover{color:#fff;border-color:rgba(255,255,255,.2);}
+.btn-nav{text-decoration:none;color:#fff;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:9px 20px;border-radius:10px;background:var(--blue);transition:all .2s;box-shadow:0 4px 14px rgba(37,99,235,.4);}
+.btn-nav:hover{background:var(--blue-b);transform:translateY(-1px);box-shadow:0 8px 24px rgba(37,99,235,.5);}
 
 /* HERO */
-.hero{
-  background:white;
-  padding:40px 20px;
-  text-align:center;
-}
-.hero h1{ font-size:32px; }
-.hero p{ color:#555; font-size:18px; }
+.hero{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:108px 56px 80px;display:grid;grid-template-columns:1fr 480px;gap:64px;align-items:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.25);color:#93c5fd;font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:26px;letter-spacing:.3px;animation:fadeUp .6s ease both;}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blink 1.8s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(44px,5.8vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2.5px;color:#fff;animation:fadeUp .6s .08s ease both;}
+.grad-text{background:linear-gradient(135deg,#60a5fa 0%,#818cf8 45%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{margin-top:22px;font-size:17px;color:var(--muted2);line-height:1.75;font-weight:300;max-width:430px;animation:fadeUp .6s .16s ease both;}
+.hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;animation:fadeUp .6s .24s ease both;}
+.btn-hero{display:inline-flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;padding:15px 30px;border-radius:14px;text-decoration:none;transition:all .25s;letter-spacing:.1px;}
+.btn-hp{background:linear-gradient(135deg,var(--blue),#4f46e5);color:#fff;box-shadow:0 10px 32px rgba(37,99,235,.4);}
+.btn-hp:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(37,99,235,.55);}
+.btn-hs{background:rgba(255,255,255,.06);border:1px solid var(--border2);color:var(--text);}
+.btn-hs:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff;}
+.hero-trust{display:flex;align-items:center;gap:12px;margin-top:32px;animation:fadeUp .6s .32s ease both;}
+.trust-avatars{display:flex;}
+.trust-avatars span{width:30px;height:30px;border-radius:50%;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;margin-left:-8px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;font-weight:700;}
+.trust-avatars span:first-child{margin-left:0;}
+.trust-text{font-size:13px;color:var(--muted2);}
+.trust-text strong{color:var(--text);}
 
-/* HERO IMAGE */
-.hero-image{
-  display:flex;
-  justify-content:center;
-  margin:25px 0;
-}
-.hero-image img{
-  width:70%;
-  max-width:600px;
-  height:300px;
-  object-fit:cover;
-  border-radius:12px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.2);
-}
+/* HERO VISUAL */
+.hero-visual{position:relative;animation:fadeUp .6s .1s ease both;}
+.hero-img-frame{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--border2);box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px var(--border);}
+.hero-img-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.hero-img-frame:hover img{transform:scale(1.04);}
+.hero-img-frame::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 30%,rgba(5,11,26,.7) 100%);}
+.hero-img-frame::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.012) 2px,rgba(255,255,255,.012) 4px);}
+.hbc{position:absolute;z-index:10;background:rgba(12,20,40,.88);backdrop-filter:blur(18px);border:1px solid var(--border2);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.hbc1{bottom:-22px;left:-24px;animation:floatA 4s ease-in-out infinite;}
+.hbc2{top:-20px;right:-18px;animation:floatB 4.5s ease-in-out infinite;}
+.hbc3{bottom:30px;right:-28px;animation:floatA 5s 1s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes floatB{0%,100%{transform:translateY(0) rotate(-1deg);}50%{transform:translateY(-8px) rotate(1deg);}}
+.hbc-icon{font-size:24px;}
+.hbc-num{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;}
+.hbc-label{font-size:11px;color:var(--muted2);margin-top:1px;}
+.live-badge{position:absolute;top:14px;left:14px;z-index:10;background:rgba(12,20,40,.85);backdrop-filter:blur(12px);border:1px solid rgba(16,185,129,.3);border-radius:100px;padding:5px 12px;display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--emerald);font-weight:600;}
+.live-dot{width:7px;height:7px;background:var(--emerald);border-radius:50%;animation:livePulse 1.5s infinite;}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5);}50%{box-shadow:0 0 0 5px rgba(16,185,129,0);}}
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:40px;
-}
-.card{
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  text-align:center;
-  transition: transform 0.3s ease;
-}
-.card:hover{
-  transform: translateY(-6px);
-}
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:8px;
-}
-.card a{
-  display:inline-block;
-  margin-top:20px;
-  color:#1a73e8;
-  font-weight:bold;
-  text-decoration:none;
-}
+/* STATS BAND */
+.stats-band{position:relative;z-index:1;max-width:1240px;margin:70px auto 0;padding:0 56px;}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border2);border-radius:22px;overflow:hidden;background:var(--card);box-shadow:0 4px 40px rgba(0,0,0,.3);}
+.stat-item{padding:34px 28px;border-right:1px solid var(--border);position:relative;overflow:hidden;transition:background .3s;}
+.stat-item:last-child{border-right:none;}
+.stat-item:hover{background:rgba(37,99,235,.07);}
+.stat-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;opacity:0;transition:opacity .3s;}
+.stat-item:nth-child(1)::after{background:var(--blue);}
+.stat-item:nth-child(2)::after{background:var(--cyan);}
+.stat-item:nth-child(3)::after{background:var(--emerald);}
+.stat-item:nth-child(4)::after{background:var(--gold);}
+.stat-item:hover::after{opacity:1;}
+.stat-icon{font-size:20px;margin-bottom:10px;}
+.stat-num{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1;}
+.stat-num sup{font-size:22px;vertical-align:super;}
+.stat-label{font-size:13px;color:var(--muted2);margin-top:7px;}
+
+/* SECTION WRAPPER */
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:100px 56px;}
+.sec-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;}
+.sec-label::before{content:'';width:20px;height:2px;background:var(--cyan);border-radius:2px;}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(30px,3.6vw,46px);font-weight:800;color:#fff;letter-spacing:-1.2px;line-height:1.12;}
+.sec-sub{font-size:16px;color:var(--muted2);margin-top:14px;max-width:480px;line-height:1.72;font-weight:300;}
+
+/* OPP CARDS */
+.opp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+.opp-card{display:block;text-decoration:none;background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .35s cubic-bezier(.34,1.56,.64,1);}
+.opp-card:hover{transform:translateY(-9px);border-color:rgba(37,99,235,.4);box-shadow:0 28px 70px rgba(0,0,0,.5),0 0 0 1px rgba(37,99,235,.12);}
+.opp-img{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--card2);}
+.opp-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+.opp-card:hover .opp-img img{transform:scale(1.07);}
+.opp-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(12,20,40,.95) 100%);}
+.opp-chip{position:absolute;bottom:14px;left:14px;z-index:2;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 13px;border-radius:100px;backdrop-filter:blur(12px);}
+.chip-j{background:rgba(37,99,235,.25);border:1px solid rgba(37,99,235,.4);color:#93c5fd;}
+.chip-s{background:rgba(245,158,11,.18);border:1px solid rgba(245,158,11,.4);color:var(--gold);}
+.chip-i{background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:var(--emerald);}
+.opp-count{position:absolute;top:14px;right:14px;z-index:2;background:rgba(12,20,40,.8);backdrop-filter:blur(10px);border:1px solid var(--border2);border-radius:8px;padding:4px 10px;font-size:12px;font-weight:600;color:var(--text);}
+.opp-body{padding:22px 24px 24px;}
+.opp-body h3{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;color:#fff;letter-spacing:-.4px;margin-bottom:9px;}
+.opp-body p{font-size:14px;color:var(--muted2);line-height:1.65;margin-bottom:20px;}
+.opp-arrow{display:inline-flex;align-items:center;gap:7px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--blue);transition:gap .2s;}
+.opp-card:hover .opp-arrow{gap:12px;}
+
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px;border:1px solid var(--border);border-radius:22px;overflow:hidden;background:var(--border);}
+.how-card{background:var(--card);padding:38px 30px;transition:background .3s;}
+.how-card:hover{background:var(--card2);}
+.how-step{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.how-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;}
+.ic-b{background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.25);}
+.ic-c{background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.25);}
+.ic-g{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);}
+.ic-o{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);}
+.how-card h4{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:-.3px;margin-bottom:10px;}
+.how-card p{font-size:14px;color:var(--muted2);line-height:1.65;}
+
+/* COMPANIES TICKER */
+.companies-wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 56px 100px;}
+.ticker-outer{margin-top:50px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#fff 12%,#fff 88%,transparent);}
+.ticker-track{display:flex;gap:14px;width:max-content;animation:ticker 30s linear infinite;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.company-pill{flex-shrink:0;background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px 24px;display:flex;align-items:center;gap:10px;white-space:nowrap;transition:border-color .2s;}
+.company-pill:hover{border-color:rgba(255,255,255,.2);}
+.cp-logo{font-size:20px;}
+.cp-name{font-size:14px;font-weight:600;color:var(--text);}
+
+/* BENEFITS */
+.benefits-wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 56px 100px;}
+.ben-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:52px;}
+.ben-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 20px;position:relative;overflow:hidden;transition:all .3s;}
+.ben-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s;}
+.ben-card:nth-child(5n+1)::before{background:var(--blue);}
+.ben-card:nth-child(5n+2)::before{background:var(--cyan);}
+.ben-card:nth-child(5n+3)::before{background:var(--emerald);}
+.ben-card:nth-child(5n+4)::before{background:var(--gold);}
+.ben-card:nth-child(5n+5)::before{background:var(--violet);}
+.ben-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.13);background:var(--card2);}
+.ben-card:hover::before{opacity:1;}
+.ben-icon{font-size:26px;margin-bottom:12px;display:block;}
+.ben-card h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+.ben-card p{font-size:13px;color:var(--muted2);line-height:1.6;}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:30px;transition:all .3s;}
+.testi-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.35);}
+.testi-stars{display:flex;gap:3px;margin-bottom:16px;font-size:14px;}
+.testi-quote{font-size:15px;color:var(--text);line-height:1.72;font-style:italic;margin-bottom:22px;font-weight:300;}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--border);}
+.testi-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;flex-shrink:0;}
+.av1{background:linear-gradient(135deg,var(--blue),var(--violet));}
+.av2{background:linear-gradient(135deg,var(--cyan),var(--emerald));}
+.av3{background:linear-gradient(135deg,var(--gold),var(--rose));}
+.testi-name{font-size:14px;font-weight:600;color:#fff;}
+.testi-role{font-size:12px;color:var(--muted2);margin-top:2px;}
+
+/* NEWSLETTER */
+.nl-wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 56px 100px;}
+.nl-box{background:linear-gradient(135deg,#0d1f4a 0%,#0a1535 50%,#0c1640 100%);border:1px solid rgba(37,99,235,.25);border-radius:28px;padding:70px 60px;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center;position:relative;overflow:hidden;}
+.nl-box::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none;}
+.nl-box::after{content:'';position:absolute;bottom:-60px;left:100px;width:300px;height:300px;background:radial-gradient(circle,rgba(6,182,212,.1) 0%,transparent 70%);pointer-events:none;}
+.nl-box h2{font-family:'Syne',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.15;margin-bottom:14px;}
+.nl-box>div:first-child p{font-size:15px;color:var(--muted2);line-height:1.65;font-weight:300;}
+.nl-form{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;}
+.nl-row{display:flex;gap:10px;}
+.nl-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;color:#fff;outline:none;transition:border-color .2s;}
+.nl-input::placeholder{color:var(--muted);}
+.nl-input:focus{border-color:rgba(37,99,235,.5);}
+.nl-btn{background:linear-gradient(135deg,var(--blue),#4f46e5);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;padding:14px 24px;border-radius:12px;cursor:pointer;white-space:nowrap;transition:all .2s;box-shadow:0 6px 20px rgba(37,99,235,.4);}
+.nl-btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(37,99,235,.5);}
+.nl-note{font-size:12px;color:var(--muted);text-align:center;}
+
+/* CTA */
+.cta-wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 56px 100px;}
+.cta-box{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#1d4ed8 0%,#4f46e5 50%,#7c3aed 100%);padding:80px 60px;text-align:center;}
+.cta-box::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;}
+.cta-tag{position:relative;z-index:1;display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+.cta-box h2{position:relative;z-index:1;font-family:'Syne',sans-serif;font-size:clamp(32px,4.5vw,54px);font-weight:800;color:#fff;letter-spacing:-1.8px;line-height:1.08;margin-bottom:16px;}
+.cta-box>p{position:relative;z-index:1;font-size:17px;color:rgba(255,255,255,.75);margin-bottom:40px;font-weight:300;}
+.cta-btns{position:relative;z-index:1;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-cw{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1d4ed8;font-family:'Syne',sans-serif;font-size:14.5px;font-weight:800;padding:16px 34px;border-radius:14px;text-decoration:none;transition:all .25s;box-shadow:0 12px 40px rgba(0,0,0,.25);}
+.btn-cw:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 20px 50px rgba(0,0,0,.35);}
+.btn-cg{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;padding:16px 34px;border-radius:14px;text-decoration:none;transition:all .25s;}
+.btn-cg:hover{background:rgba(255,255,255,.2);}
 
 /* FOOTER */
-footer{
-  background:#0a2540;
-  color:white;
-  text-align:center;
-  padding:15px;
+footer{position:relative;z-index:1;background:var(--navy2);border-top:1px solid var(--border);}
+.footer-top{max-width:1240px;margin:0 auto;padding:64px 56px 48px;display:grid;grid-template-columns:300px 1fr 1fr 1fr;gap:56px;}
+.fb-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:14px;}
+.fb-icon{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:16px;}
+.footer-brand>p{font-size:13.5px;color:var(--muted2);line-height:1.7;margin-bottom:22px;}
+.footer-socials{display:flex;gap:9px;}
+.soc-btn{width:36px;height:36px;border-radius:10px;background:var(--card);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all .2s;}
+.soc-btn:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-2px);}
+.footer-col h5{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:#fff;letter-spacing:.8px;text-transform:uppercase;margin-bottom:18px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{text-decoration:none;font-size:14px;color:var(--muted2);transition:color .2s;display:flex;align-items:center;gap:7px;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-col ul li a::before{content:'';width:4px;height:4px;background:var(--muted);border-radius:50%;transition:background .2s;flex-shrink:0;}
+.footer-col ul li a:hover::before{background:var(--blue);}
+.footer-bottom{max-width:1240px;margin:0 auto;padding:22px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid var(--border);}
+.footer-copy{font-size:13px;color:var(--muted);}
+.footer-badges{display:flex;gap:10px;flex-wrap:wrap;}
+.f-badge{background:var(--card);border:1px solid var(--border2);border-radius:8px;padding:5px 12px;font-size:11.5px;color:var(--muted2);font-weight:500;}
+.footer-legal{display:flex;gap:22px;}
+.footer-legal a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-legal a:hover{color:var(--text);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.opp-card:nth-child(1){animation:fadeUp .5s .05s both;}
+.opp-card:nth-child(2){animation:fadeUp .5s .13s both;}
+.opp-card:nth-child(3){animation:fadeUp .5s .21s both;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .ben-grid{grid-template-columns:repeat(3,1fr);}
+  .opp-grid{grid-template-columns:1fr 1fr;}
+  .how-grid{grid-template-columns:repeat(2,1fr);}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
+  .nl-box{grid-template-columns:1fr;gap:30px;}
+}
+@media(max-width:768px){
+  header{padding:0 20px;height:60px;}
+  .nav-links a:not(.active){display:none;}
+  .hero{grid-template-columns:1fr;padding:70px 20px 50px;gap:0;}
+  .hero-visual{display:none;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .stats-band,.wrap,.benefits-wrap,.companies-wrap,.nl-wrap,.cta-wrap{padding-left:20px;padding-right:20px;}
+  .opp-grid,.how-grid,.testi-grid{grid-template-columns:1fr;}
+  .ben-grid{grid-template-columns:repeat(2,1fr);}
+  .nl-box{padding:40px 28px;grid-template-columns:1fr;}
+  .cta-box{padding:50px 28px;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .footer-top{grid-template-columns:1fr;padding:40px 20px 30px;gap:30px;}
+  .footer-bottom{flex-direction:column;text-align:center;padding:20px;}
 }
 </style>
-
-<!-- Google tag optimized -->
-<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-4KXXQ8XHJW"></script>
-<script defer>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-4KXXQ8XHJW');
-</script>
-
 </head>
-
 <body>
 
+<div class="ambient">
+  <div class="ab ab1"></div><div class="ab ab2"></div>
+  <div class="ab ab3"></div><div class="ab ab4"></div>
+</div>
+
+<!-- HEADER -->
 <header>
-<h2>🌍 Global Opportunities</h2>
-<nav>
-  <a href="home.html">Home</a>
-  <a href="Jobs.html">Jobs</a>
-  <a href="Scholarships .html">Scholarships</a>
-  <a href="Internships .html">Internships</a>
-  <a href="Contact.html">Contact</a>
-  <a href="About.html">About</a>
-</nav>
+  <a href="home.html" class="logo">
+    <span class="logo-icon">🌍</span>OpportunitiesHub
+  </a>
+  <nav class="nav-links">
+    <a href="home.html" class="active">Home</a>
+    <a href="Jobs.html">Jobs</a>
+    <a href="Scholarships.html">Scholarships</a>
+    <a href="Internships.html">Internships</a>
+    <a href="About.html">About</a>
+  </nav>
+  <div class="nav-actions">
+    <a href="About.html" class="btn-outline-sm">About Us</a>
+    <a href="Contact.html" class="btn-nav">Contact →</a>
+  </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Explore Opportunities Worldwide</h1>
-<p>Find jobs, scholarships & internships globally</p>
+  <div>
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>320+ Opportunities · Updated Daily</div>
+    <h1>Discover Your<br><span class="grad-text">Next Big</span><br>Opportunity</h1>
+    <p class="hero-desc">Jobs, scholarships & internships from Rwanda and around the world — curated, verified, and completely free.</p>
+    <div class="hero-actions">
+      <a href="Jobs.html" class="btn-hero btn-hp">Browse Jobs <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="Scholarships.html" class="btn-hero btn-hs">🎓 View Scholarships</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-avatars"><span>A</span><span>M</span><span>J</span><span>K</span></div>
+      <div class="trust-text">Trusted by <strong>10,000+</strong> job seekers worldwide</div>
+    </div>
+  </div>
 
-<div class="hero-image">
-  <img 
-    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=70"
-    alt="Global professionals working together"
-    loading="eager"
-    decoding="async"
-    width="1000"
-    height="600">
-</div>
+  <div class="hero-visual">
+    <div class="hero-img-frame">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&fm=webp&fit=crop&crop=faces" alt="Professionals working" loading="eager" decoding="async" width="900" height="675">
+      <div class="live-badge"><span class="live-dot"></span>Live Listings</div>
+    </div>
+    <div class="hbc hbc1"><div class="hbc-icon">💼</div><div><div class="hbc-num">320+</div><div class="hbc-label">Active Jobs</div></div></div>
+    <div class="hbc hbc2"><div class="hbc-icon">🎓</div><div><div class="hbc-num">85+</div><div class="hbc-label">Scholarships</div></div></div>
+    <div class="hbc hbc3"><div class="hbc-icon">🌍</div><div><div class="hbc-num">50+</div><div class="hbc-label">Countries</div></div></div>
+  </div>
 </section>
 
-<!-- OPPORTUNITY CARDS -->
-<section class="cards">
-
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=70"
-       loading="lazy" decoding="async" width="600" height="400">
-  <h3>Software Engineering Jobs</h3>
-  <p>Remote & onsite tech jobs worldwide</p>
-  <a href="Jobs.html">View Jobs</a>
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-icon">💼</div><div class="stat-num">320<sup>+</sup></div><div class="stat-label">Job Listings</div></div>
+    <div class="stat-item"><div class="stat-icon">🎓</div><div class="stat-num">85<sup>+</sup></div><div class="stat-label">Scholarships</div></div>
+    <div class="stat-item"><div class="stat-icon">🌍</div><div class="stat-num">50<sup>+</sup></div><div class="stat-label">Countries</div></div>
+    <div class="stat-item"><div class="stat-icon">✅</div><div class="stat-num">100<sup>%</sup></div><div class="stat-label">Free Forever</div></div>
+  </div>
 </div>
 
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=600&q=70"
-       loading="lazy" decoding="async" width="600" height="400">
-  <h3>International Scholarships</h3>
-  <p>Fully funded study opportunities</p>
-  <a href="Scholarships .html">View Scholarships</a>
-</div>
-
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=70"
-       loading="lazy" decoding="async" width="600" height="400">
-  <h3>Internships & Training</h3>
-  <p>Gain experience from global companies</p>
-  <a href="Internships .html">View Internships</a>
-</div>
-
+<!-- OPPORTUNITIES -->
+<section class="wrap">
+  <div class="sec-label">What We Offer</div>
+  <div class="sec-title">Three Pathways<br>to Your Future</div>
+  <div class="sec-sub">Whether you want to work, study abroad, or gain experience — we have the right opportunity for you.</div>
+  <div class="opp-grid">
+    <a href="Jobs.html" class="opp-card">
+      <div class="opp-img">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=75&fm=webp&fit=crop" alt="Jobs" loading="lazy" decoding="async" width="700" height="394">
+        <span class="opp-chip chip-j">Jobs</span><span class="opp-count">180+ roles</span>
+      </div>
+      <div class="opp-body"><h3>Job Opportunities</h3><p>Remote & onsite roles from Rwanda's top companies and global organizations.</p><span class="opp-arrow">Browse All Jobs →</span></div>
+    </a>
+    <a href="Scholarships.html" class="opp-card">
+      <div class="opp-img">
+        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=700&q=75&fm=webp&fit=crop" alt="Scholarships" loading="lazy" decoding="async" width="700" height="394">
+        <span class="opp-chip chip-s">Scholarships</span><span class="opp-count">85+ awards</span>
+      </div>
+      <div class="opp-body"><h3>International Scholarships</h3><p>Fully funded opportunities at world-class universities across Europe, USA, Asia and Africa.</p><span class="opp-arrow">View Scholarships →</span></div>
+    </a>
+    <a href="Internships.html" class="opp-card">
+      <div class="opp-img">
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=700&q=75&fm=webp&fit=crop" alt="Internships" loading="lazy" decoding="async" width="700" height="394">
+        <span class="opp-chip chip-i">Internships</span><span class="opp-count">55+ programs</span>
+      </div>
+      <div class="opp-body"><h3>Internships & Training</h3><p>Gain hands-on experience from leading local and international companies.</p><span class="opp-arrow">Explore Internships →</span></div>
+    </a>
+  </div>
 </section>
 
-<!-- ABOUT WEBSITE & BENEFITS -->
- <u><h3 style="text-align: center;">BENEFITS</h3></u>
-<section class="cards">
-
-<div class="card">
-  <h3>Easy Access</h3>
-  <p>Access jobs, scholarships, and internships from one platform.</p>
-</div>
-
-<div class="card">
-  <h3>Trusted Opportunities</h3>
-  <p>We provide verified and reliable global opportunities.</p>
-</div>
-
-<div class="card">
-  <h3>Career Growth</h3>
-  <p>Jobs help individuals build strong careers and experience.</p>
-</div>
-
-<div class="card">
-  <h3>Financial Stability</h3>
-  <p>Employment provides income and improves living standards.</p>
-</div>
-
-<div class="card">
-  <h3>Global Exposure</h3>
-  <p>Work and study opportunities from different countries.</p>
-</div>
-
-<div class="card">
-  <h3>Skill Development</h3>
-  <p>Gain valuable skills through jobs, internships, and training.</p>
-</div>
-
-<div class="card">
-  <h3>Free to Use</h3>
-  <p>The website is completely free for all users.</p>
-</div>
-
-<div class="card">
-  <h3>Regular Updates</h3>
-  <p>New opportunities are added frequently.</p>
-</div>
-
-<div class="card">
-  <h3>Time Saving</h3>
-  <p>Find many opportunities without visiting multiple websites.</p>
-</div>
-
-<div class="card">
-  <h3>Support & Guidance</h3>
-  <p>We guide users on how to apply successfully.</p>
-</div>
-
+<!-- HOW IT WORKS -->
+<section class="wrap" style="padding-top:0">
+  <div class="sec-label">How It Works</div>
+  <div class="sec-title">Get Started in<br>4 Simple Steps</div>
+  <div class="how-grid">
+    <div class="how-card"><div class="how-step">Step 01</div><div class="how-icon ic-b">🔍</div><h4>Browse Listings</h4><p>Explore hundreds of verified jobs, scholarships and internships from one place.</p></div>
+    <div class="how-card"><div class="how-step">Step 02</div><div class="how-icon ic-c">🎯</div><h4>Choose Your Fit</h4><p>Filter by category, location, or type and find exactly what matches your goals.</p></div>
+    <div class="how-card"><div class="how-step">Step 03</div><div class="how-icon ic-g">📝</div><h4>Apply Directly</h4><p>Click through to the official source and submit your application directly.</p></div>
+    <div class="how-card"><div class="how-step">Step 04</div><div class="how-icon ic-o">🚀</div><h4>Launch Your Future</h4><p>Land the opportunity and take your next big step in life.</p></div>
+  </div>
 </section>
 
+<!-- COMPANIES TICKER -->
+<div class="companies-wrap">
+  <div class="sec-label">Trusted Partners</div>
+  <div class="sec-title">Opportunities From<br>Leading Organizations</div>
+  <div class="ticker-outer">
+    <div class="ticker-track">
+      <div class="company-pill"><span class="cp-logo">🟦</span><span class="cp-name">Google</span></div>
+      <div class="company-pill"><span class="cp-logo">🟠</span><span class="cp-name">Amazon</span></div>
+      <div class="company-pill"><span class="cp-logo">🪟</span><span class="cp-name">Microsoft</span></div>
+      <div class="company-pill"><span class="cp-logo">🏦</span><span class="cp-name">Bank of Kigali</span></div>
+      <div class="company-pill"><span class="cp-logo">⚡</span><span class="cp-name">Andela</span></div>
+      <div class="company-pill"><span class="cp-logo">📡</span><span class="cp-name">MTN Rwanda</span></div>
+      <div class="company-pill"><span class="cp-logo">🌐</span><span class="cp-name">Irembo</span></div>
+      <div class="company-pill"><span class="cp-logo">🏛️</span><span class="cp-name">RDB</span></div>
+      <div class="company-pill"><span class="cp-logo">🇺🇳</span><span class="cp-name">United Nations</span></div>
+      <div class="company-pill"><span class="cp-logo">🌱</span><span class="cp-name">World Bank</span></div>
+      <div class="company-pill"><span class="cp-logo">💊</span><span class="cp-name">WHO</span></div>
+      <div class="company-pill"><span class="cp-logo">✈️</span><span class="cp-name">RwandAir</span></div>
+      <!-- duplicate for loop -->
+      <div class="company-pill"><span class="cp-logo">🟦</span><span class="cp-name">Google</span></div>
+      <div class="company-pill"><span class="cp-logo">🟠</span><span class="cp-name">Amazon</span></div>
+      <div class="company-pill"><span class="cp-logo">🪟</span><span class="cp-name">Microsoft</span></div>
+      <div class="company-pill"><span class="cp-logo">🏦</span><span class="cp-name">Bank of Kigali</span></div>
+      <div class="company-pill"><span class="cp-logo">⚡</span><span class="cp-name">Andela</span></div>
+      <div class="company-pill"><span class="cp-logo">📡</span><span class="cp-name">MTN Rwanda</span></div>
+      <div class="company-pill"><span class="cp-logo">🌐</span><span class="cp-name">Irembo</span></div>
+      <div class="company-pill"><span class="cp-logo">🏛️</span><span class="cp-name">RDB</span></div>
+      <div class="company-pill"><span class="cp-logo">🇺🇳</span><span class="cp-name">United Nations</span></div>
+      <div class="company-pill"><span class="cp-logo">🌱</span><span class="cp-name">World Bank</span></div>
+      <div class="company-pill"><span class="cp-logo">💊</span><span class="cp-name">WHO</span></div>
+      <div class="company-pill"><span class="cp-logo">✈️</span><span class="cp-name">RwandAir</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="benefits-wrap">
+  <div class="sec-label">Why Choose Us</div>
+  <div class="sec-title">Everything You Need<br>in One Platform</div>
+  <div class="sec-sub">Built so you never have to search multiple websites again.</div>
+  <div class="ben-grid">
+    <div class="ben-card"><span class="ben-icon">⚡</span><h4>Easy Access</h4><p>All opportunities in one simple, fast platform.</p></div>
+    <div class="ben-card"><span class="ben-icon">✅</span><h4>Verified Listings</h4><p>Every opportunity is checked and comes from trusted sources.</p></div>
+    <div class="ben-card"><span class="ben-icon">📈</span><h4>Career Growth</h4><p>Build skills and advance your professional journey.</p></div>
+    <div class="ben-card"><span class="ben-icon">💰</span><h4>Financial Stability</h4><p>Find roles that improve your income and quality of life.</p></div>
+    <div class="ben-card"><span class="ben-icon">🌍</span><h4>Global Exposure</h4><p>Opportunities spanning 50+ countries worldwide.</p></div>
+    <div class="ben-card"><span class="ben-icon">🎓</span><h4>Skill Development</h4><p>Internships and training that build in-demand skills.</p></div>
+    <div class="ben-card"><span class="ben-icon">🆓</span><h4>Free Forever</h4><p>No fees, no subscriptions — always 100% free.</p></div>
+    <div class="ben-card"><span class="ben-icon">🔄</span><h4>Daily Updates</h4><p>Fresh listings added every day so you never miss out.</p></div>
+    <div class="ben-card"><span class="ben-icon">⏱️</span><h4>Time Saving</h4><p>Find everything without visiting multiple websites.</p></div>
+    <div class="ben-card"><span class="ben-icon">🤝</span><h4>Application Guide</h4><p>Tips and guidance to help you stand out and succeed.</p></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="wrap" style="padding-top:0">
+  <div class="sec-label">Success Stories</div>
+  <div class="sec-title">People Who Found<br>Their Opportunity Here</div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-quote">"I found my software developer role at Andela through OpportunitiesHub. The process was so easy — one platform, everything I needed."</p>
+      <div class="testi-author"><div class="testi-av av1">A</div><div><div class="testi-name">Amina Uwase</div><div class="testi-role">Software Developer · Kigali</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-quote">"Got a fully funded scholarship to study in Germany. I never would have found it without this site. Truly life-changing!"</p>
+      <div class="testi-author"><div class="testi-av av2">M</div><div><div class="testi-name">Mugisha Jean-Pierre</div><div class="testi-role">MSc Student · Berlin</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-quote">"The internship listings helped me land a placement at MTN Rwanda right after university. Great platform!"</p>
+      <div class="testi-author"><div class="testi-av av3">K</div><div><div class="testi-name">Kaliza Diane</div><div class="testi-role">Intern · MTN Rwanda</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl-wrap">
+  <div class="nl-box">
+    <div>
+      <div class="sec-label">Stay Updated</div>
+      <h2>Never Miss an<br>Opportunity Again</h2>
+      <p>Subscribe and get the latest jobs, scholarships, and internships delivered straight to your inbox every week.</p>
+    </div>
+    <div class="nl-form">
+      <input type="text" class="nl-input" placeholder="Your full name">
+      <div class="nl-row">
+        <input type="email" class="nl-input" placeholder="Your email address">
+        <button class="nl-btn">Subscribe →</button>
+      </div>
+      <p class="nl-note">🔒 No spam, ever. Unsubscribe at any time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-wrap">
+  <div class="cta-box">
+    <div class="cta-tag">✨ Free · Verified · Updated Daily</div>
+    <h2>Your Next Chapter<br>Starts Here</h2>
+    <p>Join thousands of people who discovered their future through OpportunitiesHub.</p>
+    <div class="cta-btns">
+      <a href="Jobs.html" class="btn-cw">🔍 Explore All Jobs</a>
+      <a href="Scholarships.html" class="btn-cg">🎓 View Scholarships →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Global Opportunities.</p>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="home.html" class="fb-logo"><span class="fb-icon">🌍</span>OpportunitiesHub</a>
+      <p>Your trusted platform for finding jobs, scholarships, and internships from Rwanda and across the globe.</p>
+      <div class="footer-socials">
+        <a href="#" class="soc-btn">𝕏</a>
+        <a href="#" class="soc-btn">in</a>
+        <a href="#" class="soc-btn">f</a>
+        <a href="#" class="soc-btn">📧</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Opportunities</h5>
+      <ul>
+        <li><a href="Jobs.html">Browse Jobs</a></li>
+        <li><a href="Scholarships.html">Scholarships</a></li>
+        <li><a href="Internships.html">Internships</a></li>
+        <li><a href="Jobs.html">Rwanda Jobs</a></li>
+        <li><a href="Jobs.html">Remote Jobs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="#">Our Mission</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">How to Apply</a></li>
+        <li><a href="#">CV Writing Tips</a></li>
+        <li><a href="#">Interview Guide</a></li>
+        <li><a href="#">Career Advice</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 OpportunitiesHub. All rights reserved.</div>
+    <div class="footer-badges">
+      <span class="f-badge">🔒 SSL Secured</span>
+      <span class="f-badge">✅ Verified Listings</span>
+      <span class="f-badge">🆓 Free Platform</span>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
 </footer>
 
 </body>
